@@ -16,6 +16,26 @@
         </header>
         <section>
             <h1>Sam Olson | JavaScript</h1>
+            <div id="welcome">
+                <script>
+                    const hours = new Date().getHours() // get the current hour
+
+                    const isMorning = hours >= 4 && hours < 12 // is it morning?
+                    const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
+                    const isEvening = hours >= 17 || hours < 4 // is it evening?
+                    let welcome = '' 
+
+                    if (isMorning) {
+                        welcome = 'Good morning! Welcome to my website!'
+                    } else if (isAfternoon) {
+                        welcome = 'Good afternoon! Good to see you!'
+                    } else {
+                        welcome = 'Good evening! Thanks for stopping by!'
+                    }
+
+                    document.getElementById('welcome').textContent = welcome
+                </script>
+            </div>
             <img src="img/photo.jpg" alt="Photo of Sam Olson" height="416" width="250">
             <p>Sam Olson is a current student at FVTC studying Web Design. Previously, she attended UW Oshkosh and recieved a Bachelor's of Music with an emphasis in Music Business and Recording Technology with a minor in Business Administration. She is currently working full-time in addition to taking classes full-time at FVTC.</p>
             <p>For those inquiring, her favorite movies include:</p>
