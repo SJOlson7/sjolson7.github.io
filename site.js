@@ -36,3 +36,37 @@ next.addEventListener('click', () => {
 })
 
 setInterval(() => {currentImage++, showImages()}, 5000)
+
+// To Do List
+
+const todoList = document.querySelector('.todo-list')
+const input = document.querySelector('#new-todo')
+const addTodoButton = document.querySelector('#add-todo-button')
+
+const todos = JSON.parse(localStorage.getItem('todo-list')) || []
+const saveTodos = () => {
+        localStorage.setItem('todo-list', JSON.stringify(todos))
+    }
+
+const renderTodos = () => {
+    todoList.innerHTML = ''
+
+    todos.forEach(todo => {
+        const li = document.createElement('li')
+        li.textContent = todo.text
+        todoList.append(li)
+        saveTodos()
+        renderTodos()
+    })
+}
+
+addTodoButton.addEventListener('click', () => {
+    const todoItem = input.value
+    todos.push({ "text": todoItem, "completed": false })
+    saveTodos()
+
+    input.value = ''
+    renderTodos()
+})
+
+renderTodos()
