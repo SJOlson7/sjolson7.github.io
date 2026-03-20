@@ -7,59 +7,60 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="/site.js" defer></script>
 </head>
-<div id="wrapper">
     <body>
-        <header>
-            <h1>Sam Olson | JavaScript</h1>
-            <nav>
+        <div id="wrapper">
+            <header>
+                <h1>Sam Olson | JavaScript</h1>
+                <nav>
+                    <ul>
+                        <li><a href="todolist.html">To-Do List</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <section>
+                <div id="carousel">
+                    <img alt="Image 1">
+                    <img alt="Image 2">
+                    <img alt="Image 3">
+                </div>
+                <div id="buttons">
+                    <button id="prev">Previous</button>
+                    <button id="next">Next</button>
+                </div>
+                <div id="welcome">
+                    <script>
+                        const hours = new Date().getHours() // get the current hour
+
+                        const isMorning = hours >= 4 && hours < 12 // is it morning?
+                        const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
+                        const isEvening = hours >= 17 || hours < 4 // is it evening?
+                        let welcome = '' 
+
+                        if (isMorning) {
+                            welcome = 'Good morning! Welcome to my website!'
+                        } else if (isAfternoon) {
+                            welcome = 'Good afternoon! Good to see you!'
+                        } else {
+                            welcome = 'Good evening! Thanks for stopping by!'
+                        }
+
+                        document.getElementById('welcome').textContent = welcome
+                    </script>
+                </div>
+                <img src="img/photo.jpg" alt="Photo of Sam Olson" height="416" width="250">
+                <p>Sam Olson is a current student at FVTC studying Web Design. Previously, she attended UW Oshkosh and recieved a Bachelor's of Music with an emphasis in Music Business and Recording Technology with a minor in Business Administration. She is currently working full-time in addition to taking classes full-time at FVTC.</p>
+                <p>For those inquiring, her favorite movies include:</p>
                 <ul>
-                    <li><a href="todolist.html">To-Do List</a></li>
+                    <li><em>Spaceballs</em></li>
+                    <li><em>The Room</em></li>
+                    <li><em>Kung Pow! Enter the Fist</em></li>
+                    <li><em>Velocipastor</em></li>
                 </ul>
-            </nav>
-        </header>
-        <section>
-            <div id="carousel">
-                <img alt="Image 1">
-                <img alt="Image 2">
-                <img alt="Image 3">
-            </div>
-            <div id="buttons">
-                <button id="prev">Previous</button>
-                <button id="next">Next</button>
-            </div>
-            <div id="welcome">
-                <script>
-                    const hours = new Date().getHours() // get the current hour
-
-                    const isMorning = hours >= 4 && hours < 12 // is it morning?
-                    const isAfternoon = hours >= 12 && hours < 17 // is it afternoon?
-                    const isEvening = hours >= 17 || hours < 4 // is it evening?
-                    let welcome = '' 
-
-                    if (isMorning) {
-                        welcome = 'Good morning! Welcome to my website!'
-                    } else if (isAfternoon) {
-                        welcome = 'Good afternoon! Good to see you!'
-                    } else {
-                        welcome = 'Good evening! Thanks for stopping by!'
-                    }
-
-                    document.getElementById('welcome').textContent = welcome
-                </script>
-            </div>
-            <img src="img/photo.jpg" alt="Photo of Sam Olson" height="416" width="250">
-            <p>Sam Olson is a current student at FVTC studying Web Design. Previously, she attended UW Oshkosh and recieved a Bachelor's of Music with an emphasis in Music Business and Recording Technology with a minor in Business Administration. She is currently working full-time in addition to taking classes full-time at FVTC.</p>
-            <p>For those inquiring, her favorite movies include:</p>
-            <ul>
-                <li><em>Spaceballs</em></li>
-                <li><em>The Room</em></li>
-                <li><em>Kung Pow! Enter the Fist</em></li>
-                <li><em>Velocipastor</em></li>
-            </ul>
-        </section>
-        <footer>
-            &copy; 2026 Sam Olson
-        </footer>
+            </section>
+            <div id="pokemon"></div>
+            <footer>
+                &copy; 2026 Sam Olson
+            </footer>
+        </div>
     </body>
-</div>
 </html>
