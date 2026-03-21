@@ -40,7 +40,7 @@ setInterval(() => {currentImage++, showImages()}, 5000)
 
 // Pokemon api
 
-(async () => {
+;(async () => {
 
     const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
     
@@ -59,30 +59,9 @@ setInterval(() => {currentImage++, showImages()}, 5000)
         const img = document.createElement('img')
         img.src = pokemon.sprites.front_default
         img.alt = pokemon.name
-        parentElement.append(img)   
+        div.append(img)   
     }
 
     renderPokemon(pokemon)
 
 })()
-
-
-// (async() => {
-
-//     const getRandomPokemon = async () => {
-//         const url = 'https://pokeapi.co/api/v2/pokemon/' + Math.floor(Math.random() * 150)
-//         const response = await fetch(url)
-//         const pokemon = response.json()
-//         return pokemon
-//     }
-
-//     const renderPokemon = pokemon => {
-//         const div = document.querySelector('#pokemon')
-//         parentElement.innerHTML = ""
-
-//         const img = document.createElement('img')
-//         img.src = pokemon.sprites.front_default
-//         img.alt = pokemon.name
-//         div.append(img)
-//     }
-// })()

@@ -67,3 +67,10 @@ footer {
 a {
     text-decoration: none;
 }
+
+#pokemon img {
+    margin: 0 auto;
+    width: 100px;
+    border: none;
+    padding: 50px 0;
+}
